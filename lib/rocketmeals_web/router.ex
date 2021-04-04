@@ -9,6 +9,7 @@ defmodule RocketmealsWeb.Router do
     pipe_through :api
 
     resources "/meals", MealsController, except: [:new, :edit]
+    resources "/users", UsersController, except: [:new, :edit]
   end
 
   if Mix.env() in [:dev, :test] do

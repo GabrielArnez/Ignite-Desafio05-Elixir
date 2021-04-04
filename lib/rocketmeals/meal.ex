@@ -3,6 +3,8 @@ defmodule Rocketmeals.Meal do
 
   import Ecto.Changeset
 
+  alias Rocketmeals.User
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:descricao, :data, :calorias]
   @derive {Jason.Encoder, only: [:id, :descricao, :data, :calorias]}
@@ -11,6 +13,7 @@ defmodule Rocketmeals.Meal do
     field :descricao, :string
     field :data, :naive_datetime
     field :calorias, :integer
+    has_many :users, User, on_delete: :nilify_all
 
     timestamps()
   end

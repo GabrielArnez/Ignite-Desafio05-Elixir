@@ -7,7 +7,7 @@ use Mix.Config
 # Run `mix help test` for more information.
 config :rocketmeals, Rocketmeals.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "dev",
   database: "rocketmeals_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
